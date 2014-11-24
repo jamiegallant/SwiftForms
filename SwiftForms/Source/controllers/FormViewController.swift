@@ -59,7 +59,7 @@ class FormViewController : UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = form.title
+        navigationItem.title = form?.title
     }
     
     /// MARK: UITableViewDataSource
@@ -83,7 +83,7 @@ class FormViewController : UITableViewController {
         var cell: FormBaseCell? = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as? FormBaseCell
         if cell == nil {
             
-            cell = formBaseCellClass(style: rowDescriptor.cellStyle, reuseIdentifier: reuseIdentifier)
+            cell = formBaseCellClass(style: .Default, reuseIdentifier: reuseIdentifier)
             cell?.configure()
         }
         
